@@ -1,5 +1,5 @@
 //
-//  GreenViewController.swift
+//  loginViewController.swift
 //  YsTest2
 //
 //  Created by 오윤석 on 2017. 4. 25..
@@ -8,23 +8,25 @@
 
 import UIKit
 
-class GreenViewController: UIViewController {
-    @IBAction func dismissGreen(_ sender: AnyObject) {
+class loginViewController: UIViewController {
+    
+    @IBOutlet var idText: UITextField!
+
+    @IBOutlet var passText: UITextField!
+    
+    @IBAction func loginConnect(_ sender: AnyObject) {
+        
+        let userId = idText.text
+        let userPw = passText.text
+        
+        if let myId = userId, let myPw = userPw {
+            print("ID: \(myId) PW: \(myPw)")
+        }
         
         self.dismiss(animated: true, completion: nil)
         
     }
-    @IBAction func loginGreen(_ sender: AnyObject) {
-        
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "loginvc") as? loginViewController {
-            print("aaaaaaa")
-
-            self.present(vc, animated: true, completion: nil)
-        }
-        
-        
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
